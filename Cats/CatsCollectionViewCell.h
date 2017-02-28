@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CatsCollectionViewCell.h
 //  Cats
 //
 //  Created by Hyung Jip Moon on 2017-02-27.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Photo.h"
 
-@interface ViewController : UIViewController
-
+@interface CatsCollectionViewCell : UICollectionViewCell
 
 @end
-

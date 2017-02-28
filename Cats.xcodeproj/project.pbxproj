@@ -14,6 +14,8 @@
 		DAFC66011E64F24700842225 /* Cats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAFC65FF1E64F24700842225 /* Cats.xcdatamodeld */; };
 		DAFC66031E64F24700842225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAFC66021E64F24700842225 /* Assets.xcassets */; };
 		DAFC66061E64F24700842225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC66041E64F24700842225 /* LaunchScreen.storyboard */; };
+		DAFC660F1E650E6300842225 /* CatsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFC660E1E650E6300842225 /* CatsCollectionViewCell.m */; };
+		DAFC66121E65121200842225 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFC66111E65121200842225 /* Photo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		DAFC66021E64F24700842225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAFC66051E64F24700842225 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAFC66071E64F24700842225 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAFC660D1E650E6300842225 /* CatsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatsCollectionViewCell.h; sourceTree = "<group>"; };
+		DAFC660E1E650E6300842225 /* CatsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatsCollectionViewCell.m; sourceTree = "<group>"; };
+		DAFC66101E65121200842225 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		DAFC66111E65121200842225 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,10 @@
 				DAFC66071E64F24700842225 /* Info.plist */,
 				DAFC65FF1E64F24700842225 /* Cats.xcdatamodeld */,
 				DAFC65F31E64F24700842225 /* Supporting Files */,
+				DAFC660D1E650E6300842225 /* CatsCollectionViewCell.h */,
+				DAFC660E1E650E6300842225 /* CatsCollectionViewCell.m */,
+				DAFC66101E65121200842225 /* Photo.h */,
+				DAFC66111E65121200842225 /* Photo.m */,
 			);
 			path = Cats;
 			sourceTree = "<group>";
@@ -154,10 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFC66121E65121200842225 /* Photo.m in Sources */,
 				DAFC66011E64F24700842225 /* Cats.xcdatamodeld in Sources */,
 				DAFC65FB1E64F24700842225 /* ViewController.m in Sources */,
 				DAFC65F81E64F24700842225 /* AppDelegate.m in Sources */,
 				DAFC65F51E64F24700842225 /* main.m in Sources */,
+				DAFC660F1E650E6300842225 /* CatsCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
