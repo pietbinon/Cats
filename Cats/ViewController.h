@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Photo.h"
+#import "NetworkManager.h"
+#import "CatsCollectionViewCell.h"
 
 @interface ViewController : UIViewController
 

@@ -16,6 +16,7 @@
 		DAFC66061E64F24700842225 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAFC66041E64F24700842225 /* LaunchScreen.storyboard */; };
 		DAFC660F1E650E6300842225 /* CatsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFC660E1E650E6300842225 /* CatsCollectionViewCell.m */; };
 		DAFC66121E65121200842225 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFC66111E65121200842225 /* Photo.m */; };
+		DAFC66151E656BE700842225 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFC66141E656BE700842225 /* NetworkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		DAFC660E1E650E6300842225 /* CatsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatsCollectionViewCell.m; sourceTree = "<group>"; };
 		DAFC66101E65121200842225 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		DAFC66111E65121200842225 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		DAFC66131E656BE700842225 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		DAFC66141E656BE700842225 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				DAFC660E1E650E6300842225 /* CatsCollectionViewCell.m */,
 				DAFC66101E65121200842225 /* Photo.h */,
 				DAFC66111E65121200842225 /* Photo.m */,
+				DAFC66131E656BE700842225 /* NetworkManager.h */,
+				DAFC66141E656BE700842225 /* NetworkManager.m */,
 			);
 			path = Cats;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAFC66121E65121200842225 /* Photo.m in Sources */,
+				DAFC66151E656BE700842225 /* NetworkManager.m in Sources */,
 				DAFC66011E64F24700842225 /* Cats.xcdatamodeld in Sources */,
 				DAFC65FB1E64F24700842225 /* ViewController.m in Sources */,
 				DAFC65F81E64F24700842225 /* AppDelegate.m in Sources */,

@@ -7,12 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "Photo.h"
 
-@interface ViewController ()
+@interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property NSDictionary *photoDictionary;
-//@property NSMutableArray  *photoTitles;         // Titles of images
 @property NSMutableArray  *storeAllPhotos;
 
 @end
@@ -47,71 +46,46 @@
         for(NSDictionary *tempPhotoDictionary in photos) {
             
             NSString *title = [tempPhotoDictionary objectForKey:@"title"];
-            //[self.photoTitles addObject:(title.length > 0 ? title : @"Untitled")];
-            
-//            NSString *photoURLString =
-//            [NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@.jpg",
-//             [tempPhotoDictionary objectForKey:@"farm"], [tempPhotoDictionary objectForKey:@"server"],
-//             [tempPhotoDictionary objectForKey:@"id"], [tempPhotoDictionary objectForKey:@"secret"]];
+
             
             Photo *newPhoto = [[Photo alloc] initWithServer:[tempPhotoDictionary objectForKey:@"server"] initWithFarm:[tempPhotoDictionary objectForKey:@"farm"] initWithID:[tempPhotoDictionary objectForKey:@"id"] initWithSecret:[tempPhotoDictionary objectForKey:@"secret"] initWithTitle:title initWithURL:url];
             
             [self.storeAllPhotos addObject:newPhoto];
-            //self item at index path, it's gonna give me indexpath.row
-            //row will be index of array of photos
+
             
             NSLog(@"%@",self.storeAllPhotos);
-            //NSLog(@"photoURLString: %@", photoURLString);
 
-            //NSString *repoName = repo[@"photos"];
-           // NSLog(@"repo: %@", title);
-//            NSLog(@"photoURLString: %@", photoURLString);
 
         }
-        //[self.storePhotosView reloadData];
+        [self.collectionView reloadData];
+
     }];
     
     [dataTask resume];
 }
 
-//- (void)flickrJsonPhotoDownload {
-////    NSURL *jsonUrl = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=a7e8eeb660518f4cb05325751027181d&tags=cat"];
-////    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:jsonUrl];
-//    
-//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-//    
-//    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        
-//
-//        
-//        NSDictionary *photosDict = jsonDictionary[@"photos"];
-//        NSArray *arrayOfPhotos = photosDict[@"photo"];
-//        
-//        for (NSDictionary *photoInfo in arrayOfPhotos) {
-//            NSNumber *farmNum = photoInfo[@"farm"];
-//            NSString *serverId = photoInfo[@"server"];
-//            NSString *photoId = photoInfo[@"id"];
-//            NSString *photoSecret = photoInfo[@"secret"];
-//            NSString *photoTitle = photoInfo[@"title"];
-//            
-//            Photo *newPhoto = [[Photo alloc] initWithfarmNumber:farmNum serverId:serverId photoId:photoId secret:photoSecret andTitle:photoTitle];
-//            [self.listOfPhotos addObject:newPhoto];
-//            newPhoto.delegate = self;
-//        }
-//        
-//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//            
-//            [self.collectionView reloadData];
-//        }];
-//    }];
-//    
-//    [dataTask resume];
-//}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.storeAllPhotos count];
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CatsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"myCell" forIndexPath:indexPath];
+    cell.photo = self.storeAllPhotos[indexPath.item];
+    return cell;
+    
 }
 
 @end

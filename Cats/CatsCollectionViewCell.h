@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
 
 @interface CatsCollectionViewCell : UICollectionViewCell
+
+@property (strong, nonatomic) IBOutlet UILabel *photoLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *catImageView;
+
+
+@property (strong, nonatomic) Photo *photo;
+
 
 @end
