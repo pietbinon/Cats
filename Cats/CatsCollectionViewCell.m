@@ -8,43 +8,30 @@
 
 #import "CatsCollectionViewCell.h"
 
+@interface CatsCollectionViewCell() {
+
+}
+
+@property (nonatomic, strong) NetworkManager *networkManager;
+
+@end
+
 @implementation CatsCollectionViewCell
 
 - (void)setPhoto:(Photo *)photo {
     _photo = photo;
-    
-   [self downloadPhotos];
-}
+    self.photoLabel.text = self.photo.photoTitle;
 
-- (void)downloadPhotos {
+    self.networkManager = [[NetworkManager alloc]init];
     
+   //[self downloadPhotos];
     
-    NSURL *url = self.photo.photoURL;
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    
-    NSURLSessionDownloadTask *dataTask = [session downloadTaskWithURL:url completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    [self.networkManager downloadImagesFromURL:self.photo.photoURL completion:^(UIImage *image) {
+        self.catImageView.image = image;
         
-        if (error) {
-            NSLog(@"error: %@", error.localizedDescription);
-            return;
-        }
-        
-        NSData *data = [NSData dataWithContentsOfURL:location];
-        
-        UIImage *imageToBeDisplayed = [UIImage imageWithData:data];
-        
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.catImageView.image = imageToBeDisplayed;
-        }];
         
     }];
-    
-    [dataTask resume];
-    
-    
-    self.photoLabel.text = self.photo.photoTitle;
+
 }
+
 @end

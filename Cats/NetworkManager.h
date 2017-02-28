@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "Photo.h"
 
 @interface NetworkManager : NSObject
+
+- (void)getPicturesWithCompletion:(void (^)(NSMutableArray *))completion;
+- (void)downloadImagesFromURL:(NSURL *)url completion:(void (^)(UIImage *))completion;
 
 @end
