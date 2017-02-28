@@ -10,8 +10,16 @@
 
 @interface Photo : NSObject
 
-@property NSDictionary *storePhotos;
-@property NSString *storePhotoURL;
-@property NSString *storePhotoTitle;
+
+- (instancetype)initWithServer :(NSString *)server initWithFarm:(NSString *)farm initWithID:(NSString *)pID initWithSecret:(NSString *)secret initWithTitle:(NSString *)title initWithURL:(NSURL *)pURL;
+
+@property (nonatomic) NSString *photoServer;
+@property (nonatomic) NSString *photoFarm;
+@property (nonatomic) NSString *photoID;
+@property (nonatomic) NSString *photoSecret;
+@property (nonatomic) NSString *photoTitle;
+@property (nonatomic) NSURL *photoURL;
 
 @end
+
+
