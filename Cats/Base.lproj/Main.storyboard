@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hiv-XS-Mmh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MPo-nV-niP">
                                     <size key="itemSize" width="130" height="130"/>
@@ -68,7 +68,7 @@
                             <constraint firstItem="Hiv-XS-Mmh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CNg-8F-GSp"/>
                             <constraint firstAttribute="trailing" secondItem="Hiv-XS-Mmh" secondAttribute="trailing" id="L3g-pI-Jkc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hiv-XS-Mmh" secondAttribute="bottom" id="NiE-4E-eCq"/>
-                            <constraint firstItem="Hiv-XS-Mmh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="U0e-f2-VQx"/>
+                            <constraint firstItem="Hiv-XS-Mmh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="U0e-f2-VQx"/>
                         </constraints>
                     </view>
                     <connections>

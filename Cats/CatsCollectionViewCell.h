@@ -15,7 +15,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *photoLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *catImageView;
 
-
 @property (strong, nonatomic) Photo *photo;
 
 

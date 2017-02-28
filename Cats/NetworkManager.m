@@ -49,6 +49,8 @@
 
                                           for(NSDictionary *tempPhotoDictionary in photos) {
                                               
+                                              
+                                              // Get title of the image
                                               NSString *title = [tempPhotoDictionary objectForKey:@"title"];
                                             
                                               Photo *newPhoto = [[Photo alloc] initWithServer:[tempPhotoDictionary objectForKey:@"server"] initWithFarm:[tempPhotoDictionary objectForKey:@"farm"] initWithID:[tempPhotoDictionary objectForKey:@"id"] initWithSecret:[tempPhotoDictionary objectForKey:@"secret"] initWithTitle:title initWithURL:url];

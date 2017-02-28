@@ -12,14 +12,10 @@
     
 }
 
-
-@property (nonatomic, strong) NetworkManager *networkManager;
-
-
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
-//@property NSMutableArray  *photoTitles;         // Titles of images
 @property NSMutableArray  *storeAllPhotos;
+@property (nonatomic, strong) NetworkManager *networkManager;
 
 @end
 
@@ -28,61 +24,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.storeAllPhotos = [NSMutableArray new];
-
+    self.storeAllPhotos = [NSMutableArray array];
     self.networkManager = [[NetworkManager alloc]init];
+    
     [self.networkManager getPicturesWithCompletion:^(NSMutableArray *photos) {
-        self.storeAllPhotos = [photos mutableCopy];
+        self.storeAllPhotos = photos;
         [self.collectionView reloadData];
     }];
-    
-
-    
-    //self.photoTitles = [NSMutableArray new];
-    // Do any additional setup after loading the view, typically from a nib.
-//    NSURL *url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=500a485bcdb5d40ef46da98c4c7f8806&tags=cat"];
-//    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
-//    
-//    
-//    
-//    
-//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-//    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        if(error) {
-//            NSLog(@"error: %@", error.localizedDescription);
-//            return;
-//        }
-//        NSError *jsonError = nil;
-//        self.photoDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-//        if(jsonError) {
-//            //Handle the error
-//            NSLog(@"jsonError: %@", jsonError.localizedDescription);
-//            return ;
-//        }
-//        
-//        NSDictionary *photos = [[self.photoDictionary objectForKey:@"photos"] objectForKey:@"photo"];
-//        // If we reach this point, we have successfully retrieved the JSON from the API
-//        for(NSDictionary *tempPhotoDictionary in photos) {
-//            
-//            NSString *title = [tempPhotoDictionary objectForKey:@"title"];
-//
-//            
-//            Photo *newPhoto = [[Photo alloc] initWithServer:[tempPhotoDictionary objectForKey:@"server"] initWithFarm:[tempPhotoDictionary objectForKey:@"farm"] initWithID:[tempPhotoDictionary objectForKey:@"id"] initWithSecret:[tempPhotoDictionary objectForKey:@"secret"] initWithTitle:title initWithURL:url];
-//            
-//            [self.storeAllPhotos addObject:newPhoto];
-//
-//            
-//            NSLog(@"%@",self.storeAllPhotos);
-//
-//
-//        }
-//        [self.collectionView reloadData];
-//
-//        //[self.storePhotosView reloadData];
-//    }];
-//    
-//    [dataTask resume];
 }
 
 - (void)didReceiveMemoryWarning {

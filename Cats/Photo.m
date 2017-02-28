@@ -26,7 +26,6 @@
          self.photoID, self.photoSecret];
         
         self.photoURL = [NSURL URLWithString:photoURLString];
-
     }
     return self;
     
