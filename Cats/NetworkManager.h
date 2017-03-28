@@ -2,7 +2,7 @@
 //  NetworkManager.h
 //  Cats
 //
-///  Created by Pierre Binon on 2017-01-25.
+//  Created by Pierre Binon on 2017-01-25.
 //  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
