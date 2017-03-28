@@ -2,22 +2,26 @@
 //  ViewController.m
 //  Cats
 //
-//  Created by Hyung Jip Moon on 2017-02-27.
-//  Copyright © 2017 leomoon. All rights reserved.
+//  Created by Pierre Binon on 2017-01-25.
+//  Copyright © 2017 Pierre Binon. All rights reserved.
 //
 
 #import "ViewController.h"
+
+
 
 @interface ViewController () <UICollectionViewDataSource, UICollectionViewDelegate> {
     
 }
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-
 @property NSMutableArray  *storeAllPhotos;
 @property (nonatomic, strong) NetworkManager *networkManager;
 
 @end
+
+
+
 
 @implementation ViewController
 
@@ -25,13 +29,14 @@
     [super viewDidLoad];
 
     self.storeAllPhotos = [NSMutableArray array];
-    self.networkManager = [[NetworkManager alloc]init];
+    self.networkManager = [[NetworkManager alloc] init];
     
-    [self.networkManager getPicturesWithCompletion:^(NSMutableArray *photos) {
+    [self.networkManager getPicturesWithCompletion: ^(NSMutableArray *photos) {
         self.storeAllPhotos = photos;
         [self.collectionView reloadData];
     }];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -39,24 +44,23 @@
 }
 
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
     return 1;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     return [self.storeAllPhotos count];
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    CatsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"myCell" forIndexPath:indexPath];
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CatsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: @"myCell" forIndexPath:indexPath];
     cell.photo = self.storeAllPhotos[indexPath.item];
     return cell;
-    
 }
-
-
 
 @end
